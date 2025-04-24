@@ -30,8 +30,8 @@ export async function loginAdmin(req, res) {
       res
         .cookie("adminToken", adminToken, {
           httpOnly: false,
-          secure: false,
-          sameSite: "strict",
+          secure: true,
+          sameSite: "none",
           maxAge: 3600000,
         })
         .send({ message: "Login Successfull", admin: admin });

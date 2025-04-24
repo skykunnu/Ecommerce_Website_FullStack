@@ -11,8 +11,8 @@ authRouter.post("/logout", async (req, res) => {
   try {
     res.clearCookie("LoginToken", {
       httpOnly: false,
-      secure: false,
-      sameSite: "strict",
+      secure: true,
+      sameSite: "none",
     });
     res.status(200).send({ message: "Logged Out" });
   } catch (error) {
