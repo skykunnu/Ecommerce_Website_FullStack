@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { useEcom } from "../context/EcomProvider";
-import Loader from "../components/Loader";
+import { useEcom } from "../Context/EcomProvider";
+import Loader from "../Components/Loader";
 import DisplayProduct from "../Components/DisplayProduct";
 import { Link } from "react-router-dom";
 
