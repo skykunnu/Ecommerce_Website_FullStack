@@ -17,7 +17,7 @@ function EcomProvider({ children }) {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const [dealProduct, setDealProduct] = useState([]);
-  const [wishlist, setWishlist]=useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   // fetching all Products with only 10 products visible.
   async function fetchProduct(page = null) {
@@ -124,17 +124,22 @@ function EcomProvider({ children }) {
       const response = await instance.get("/user/getWishlist", {
         withCredentials: true,
       });
-      const wishlistData=response.data.wishlist;
+      const wishlistData = response.data.wishlist;
 
-      const populatedWishlist=await Promise.all(wishlistData.map(async(productSlug)=>{
-        const productResponse=await instance.get(`/product/get/${productSlug}`,{withCredentials:true});
-        console.log(productResponse)
-        return {product:productResponse.data.products[0]};
-      }));
-       
+      const populatedWishlist = await Promise.all(
+        wishlistData.map(async (productSlug) => {
+          const productResponse = await instance.get(
+            `/product/get/${productSlug}`,
+            { withCredentials: true }
+          );
+          console.log(productResponse);
+          return { product: productResponse.data.products[0] };
+        })
+      );
+
       console.log(wishlistData);
       console.log(populatedWishlist);
-      setWishlist(populatedWishlist)
+      setWishlist(populatedWishlist);
     } catch (error) {
       console.log(error);
     }
@@ -160,7 +165,7 @@ function EcomProvider({ children }) {
         );
         console.log(response);
         if (response.status === 200) {
-          setWishlist([...wishlist,response.data.wishlist]);
+          setWishlist([...wishlist, response.data.wishlist]);
         }
       }
     } catch (error) {
@@ -168,17 +173,17 @@ function EcomProvider({ children }) {
     }
   }
 
-  async function removeFromWishlist(productSlug){
-    try{
-      const response=await instance.delete(`/user/deleteWishlist/${productSlug}`,{withCredentials:true});
-      console.log(response.data)
-    }
-    catch(error){
+  async function removeFromWishlist(productSlug) {
+    try {
+      const response = await instance.delete(
+        `/user/deleteWishlist/${productSlug}`,
+        { withCredentials: true }
+      );
+      console.log(response.data);
+    } catch (error) {
       console.error(error);
     }
   }
-
-
 
   // async function addToCart(productSlug) {
   //   try {
