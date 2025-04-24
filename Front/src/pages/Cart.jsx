@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEcom } from "../context/EcomProvider";
+import { useEcom } from "../Context/EcomProvider";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { useState, useEffect } from "react";
