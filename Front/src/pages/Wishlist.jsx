@@ -1,6 +1,5 @@
 import { useEcom } from "../Context/EcomProvider";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { MdCurrencyRupee } from "react-icons/md";
 import Loader from "../Components/Loader";
 
@@ -62,12 +61,12 @@ function Wishlist() {
 
               </div>
               <div className="buttons flex  gap-3 py-2 px-4">
-                <Link className="rounded px-2 py-1 bg-green-600 text-white">
+                <button className="rounded px-2 py-1 bg-green-600 text-white">
                   Add To Cart
-                </Link>
-                <Link className="rounded px-2 py-1 bg-red-600 text-white" onClick={()=>handleWishlist(item?.product?.slug)}>
+                </button>
+                <button className="rounded px-2 py-1 bg-red-600 text-white" onClick={()=>handleWishlist(item?.product?.slug)}>
                   Remove From Wishlist
-                </Link>
+                </button>
               </div>
             </div>
           );

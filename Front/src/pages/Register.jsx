@@ -30,6 +30,7 @@ function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    console.log(data)
     try {
       const repsonse = await instance.post("/user/register", data, {
         withCredentials: true,

@@ -1,5 +1,4 @@
-import mongoose from "mongoose"
-
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -8,7 +7,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    unique:true,
+    unique: true,
     required: true,
   },
   password: {
@@ -17,18 +16,17 @@ const userSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    
   },
   wishlist: [
     {
-      type:String,
+      type: String,
+      unique: true,
     },
   ],
-  role:{
-    type:String,
-    default:"user"
-
-  }
+  role: {
+    type: String,
+    default: "user",
+  },
 });
 
 const User = mongoose.model("User", userSchema);
