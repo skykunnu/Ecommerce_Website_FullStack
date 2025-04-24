@@ -24,6 +24,10 @@ function Header() {
     await fetchWishlist();
   }
 
+  if(!isUserLoggedIn){
+    wishlist.length=0;
+  }
+
   return (
     <div className="flex justify-between bg-amber-200 px-12 py-2 mb-4">
       <Link to="/">
