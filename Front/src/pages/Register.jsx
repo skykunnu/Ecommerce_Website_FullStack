@@ -32,10 +32,10 @@ function Register() {
     e.preventDefault();
     console.log(data)
     try {
-      const repsonse = await instance.post("/user/register", data, {
+      const response = await instance.post("/user/register", data, {
         withCredentials: true,
       });
-      console.log(repsonse.data);
+      console.log(response.data);
     } catch (error) {
       setError(error.message);
     }
