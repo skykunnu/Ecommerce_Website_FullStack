@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
+// baseURL:"https://ecommerce-website-fullstack.onrender.com/api"
 baseURL:"http://localhost:4000/api"
 });
 
