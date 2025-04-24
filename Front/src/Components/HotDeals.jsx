@@ -1,7 +1,7 @@
 import { useEcom } from "../Context/EcomProvider"
 import {useEffect} from "react"
-import DisplayProduct from "../components/DisplayProduct";
-import Loader from "../components/Loader";
+import DisplayProduct from "../Components/DisplayProduct";
+import Loader from "../Components/Loader";
 
 
 function HotDeals() {

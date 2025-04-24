@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useEcom } from "../context/EcomProvider";
-import DisplayProduct from "../components/DisplayProduct";
-import Loader from "../components/Loader";
+import { useEcom } from "../Context/EcomProvider";
+import DisplayProduct from "../Components/DisplayProduct";
+import Loader from "../Components/Loader";
 
 function NoProductsFoundBanner() {
   return (
