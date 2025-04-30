@@ -15,7 +15,6 @@ export async function registerUser(req, res) {
       password: hashedPassword,
       wishlist: []
     });
-    // console.log("newUser",newUser);
     await newUser.save();
 
     res.status(201).send({ message: "User registered", user: newUser });
