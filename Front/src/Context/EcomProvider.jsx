@@ -185,43 +185,43 @@ function EcomProvider({ children }) {
     }
   }
 
-  // async function addToCart(productSlug) {
-  //   try {
-  //     if (existInCart(productSlug)) {
-  //       alert("Already exist in cart");
-  //     } else {
-  //       const response = await instance.post(
-  //         "/cart/addToCart",
-  //         { productSlug: productSlug, quantity: 1 },
-  //         { withCredentials: true }
-  //       );
-  //       console.log("Cart updated", response.data);
-  //       if (response.status === 200) {
-  //         return response.data;
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.log("product not added to cart", error);
-  //   }
-  // }
+  async function addToCart(productSlug) {
+    try {
+      if (existInCart(productSlug)) {
+        alert("Already exist in cart");
+      } else {
+        const response = await instance.post(
+          "/cart/addToCart",
+          { productSlug: productSlug, quantity: 1 },
+          { withCredentials: true }
+        );
+        console.log("Cart updated", response.data);
+        if (response.status === 200) {
+          return response.data;
+        }
+      }
+    } catch (error) {
+      console.log("product not added to cart", error);
+    }
+  }
 
-  // async function existInCart(slug) {
-  //   const response = await instance.get(`cart/checkInCart/${slug}`, {
-  //     withCredentials: true,
-  //   });
-  //   return response.status === 400 ? true : false;
-  // }
+  async function existInCart(slug) {
+    const response = await instance.get(`cart/checkInCart/${slug}`, {
+      withCredentials: true,
+    });
+    return response.status === 400 ? true : false;
+  }
 
-  // async function fetchCart() {
-  //   try {
-  //     const response = await instance.get("/cart/fetchCart", {
-  //       withCredentials: true,
-  //     });
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+  async function fetchCart() {
+    try {
+      const response = await instance.get("/cart/fetchCart", {
+        withCredentials: true,
+      });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <ecomContext.Provider
@@ -236,7 +236,7 @@ function EcomProvider({ children }) {
         deleteProductOrCategory,
         fetchWishlist,
         fetchProduct,
-        // addToCart,
+        addToCart,
         addToWishlist,
         existInWishlist,
         fetchCategories,
@@ -244,7 +244,8 @@ function EcomProvider({ children }) {
         fetchHotDeals,
         fetchAllProducts,
         fetchSingleProduct,
-        // fetchCart,
+        fetchCart,
+        existInCart
       }}
     >
       {/* Below children represents <RouterProvider router={router} />  means every component rendered by RouterProvider (eg: First, Home, wishlist and so on) 
