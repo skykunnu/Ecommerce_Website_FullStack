@@ -9,7 +9,7 @@ function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState([]);
-  const [deliveryCharges, setDeliveryCharges] = useState(0);
+  // const [deliveryCharges, setDeliveryCharges] = useState(0);
   useEffect(() => {
     fetchData();
   }, []);
@@ -72,14 +72,14 @@ function Cart() {
                       {item.quantity === 1 ? (
                         <p
                           className="cursor-pointer w-5 border  border-amber-400 bg-amber-400 flex items-center justify-center"
-                          onClick={() => removeFromCart(item.product._id)}
+                          // onClick={() => removeFromCart(item.product._id)}
                         >
                           <MdOutlineDeleteForever />
                         </p>
                       ) : (
                         <p
                           className="cursor-pointer w-5 border  border-amber-400 bg-amber-400 flex items-center justify-center"
-                          onClick={() => updateQuantity(item.product._id, "-")}
+                          // onClick={() => updateQuantity(item.product._id, "-")}
                         >
                           -
                         </p>
@@ -92,7 +92,7 @@ function Cart() {
                       <p
                         className="cursor-pointer w-5 border  border-amber-400 bg-amber-400 flex items-center justify-center"
                         // onClick={() => updateQuantity(item.product._id, "+")}
-                        onClick={() => addToCart(item.product)}
+                        // onClick={() => addToCart(item.product)}
                       >
                         +
                       </p>
