@@ -40,10 +40,11 @@ export async function fetchHotDeals(req, res) {
 export async function fetchProduct(req, res) {
   try {
     let query = {};
-    if (req.params.id) {
+    if (req.params.slug) {
       // query._id = req.params.id;
-      query.slug = req.params.id;
+      query.slug = req.params.slug;
     }
+    console.log("req.params.slug",req.params.slug);
 
     if (req.query.category) {
       query.category = new mongoose.Types.ObjectId(req.query.category);
