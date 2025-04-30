@@ -40,9 +40,8 @@ export async function fetchHotDeals(req, res) {
 export async function fetchProduct(req, res) {
   try {
     let query = {};
-    if (req.params.id) {
-      // query._id = req.params.id;
-      query.slug = req.params.id;
+    if (req.params.slug) {
+      query.slug = req.params.slug;
     }
 
     if (req.query.category) {
@@ -57,7 +56,6 @@ export async function fetchProduct(req, res) {
     }
 
     const page = req.query.page ? Number(req.query.page) : 1;
-    // console.log("page in fetchProduct", page);
     const limit = 10;
     const skip = (page - 1) * limit;
 
@@ -87,7 +85,6 @@ export async function fetchCategories(req, res) {
     let query = {};
 
     const page = req.query.page ? Number(req.query.page) : 1;
-    // console.log("page in fetchCategories", page);
     const limit = 10;
     const skip = (page - 1) * limit;
 

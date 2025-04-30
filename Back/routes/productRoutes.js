@@ -13,7 +13,7 @@ const productRouter = express.Router();
 
 productRouter.post("/add", upload.single("image"), addProduct);
 productRouter.get("/get", fetchProduct);
-productRouter.get("/get/:id", fetchProduct);
+productRouter.get("/get/:slug", fetchProduct);
 productRouter.get("/category", fetchCategories);
 productRouter.post("/category/add", upload.single("image"), addCategory);
 productRouter.delete("/:id", deleteProductOrCategory);
