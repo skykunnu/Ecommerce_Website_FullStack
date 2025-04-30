@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
   wishlist: [
     {
       type: String,
-      unique: true,
     },
   ],
   role: {
