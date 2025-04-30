@@ -133,7 +133,7 @@ function EcomProvider({ children }) {
             { withCredentials: true }
           );
           console.log(productResponse);
-          return { product: productResponse.data.products[0] };
+          return { product: productResponse.data.products};
         })
       );
 
